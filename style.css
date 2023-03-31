@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap");
+
+:root {
+  --reaction-test-red: hsl(0, 100%, 67%);
+  --memory-test-yellow: hsl(47, 100%, 62%);
+  --verbal-test-green: hsl(166, 100%, 37%);
+  --visual-test-blue: hsl(234, 85%, 45%);
+
+  --primary-background-gradient-color: hsl(252, 100%, 67%);
+  --secondary-background-gradient-color: hsl(241, 81%, 54%);
+
+  --primary-circle-gradient-color: hsla(256, 72%, 46%, 1);
+  --secondary-circle-gradient-color: hsla(241, 72%, 46%, 0);
+
+  --white: hsl(0, 0%, 100%);
+  --pale-blue: hsl(221, 100%, 96%);
+  --light-lavender: hsl(241, 100%, 89%);
+  --dark-gray-blue: hsl(224, 30%, 27%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Hanken Grotesk", sans-serif;
+  height: 100vh;
+}
+
+.results {
+  color: hsla(0, 0%, 100%, 0.7);
+  background-image: linear-gradient(
+    to bottom,
+    var(--primary-background-gradient-color),
+    var(--secondary-background-gradient-color)
+  );
+
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0 0 30px 30px;
+}
+
+.results > h1 {
+  font-size: 1.1em;
+}
+
+.results .result-score {
+  width: 140px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    to bottom,
+    var(--primary-circle-gradient-color),
+    var(--secondary-circle-gradient-color)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.3rem 0;
+}
+
+.result-score .reached-score {
+  display: block;
+  font-size: 3em;
+  font-weight: 800;
+  color: white;
+}
+
+.result-score p {
+  color: hsl(0, 0%, 100%, 0.4);
+}
+
+.results .score-rating {
+  font-size: 1.5em;
+  color: white;
+  font-weight: 700;
+}
+.results .info {
+  text-align: center;
+  padding: 0.8rem 1.3rem 1.5rem 1.3rem;
+}
+
+.summary {
+  padding: 1.5rem;
+}
+
+.summary h2 {
+  font-size: 1.2em;
+  color: var(--dark-gray-blue);
+  margin-bottom: 1.3rem;
+}
+
+.summary-item {
+  background-color: var(--pale-blue);
+  margin: 1rem 0;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  font-weight: 800;
+}
+.summary-item p {
+  color: hsl(224, 30%, 27%, 0.5);
+}
+
+.summary-item span {
+  color: var(--dark-gray-blue);
+}
+
+.summary-item .flex-group {
+  display: flex;
+  gap: 10px;
+}
+
+.flex-group h3 {
+  font-size: 1em;
+  font-weight: 800;
+}
+
+.reaction-category {
+  color: var(--reaction-test-red);
+  background-color: hsl(0, 100%, 67%, 0.1);
+}
+
+.memory-category {
+  color: var(--memory-test-yellow);
+  background-color: hsl(39, 100%, 81%, 0.2);
+}
+
+.verbal-category {
+  color: var(--verbal-test-green);
+  background-color: hsl(166, 100%, 37%, 0.1);
+}
+
+.visual-category {
+  color: var(--visual-test-blue);
+  background-color: hsl(234, 85%, 45%, 0.1);
+}
+
+#continue-button {
+  color: var(--white);
+  font-size: 1em;
+  font-weight: 700;
+  background-color: var(--dark-gray-blue);
+  border: none;
+  width: 100%;
+  padding: 1.2rem;
+  border-radius: 30px;
+  margin-top: 0.5rem;
+}
+
+#continue-button:hover {
+  cursor: pointer;
+  background-image: linear-gradient(
+    to bottom,
+    var(--primary-background-gradient-color),
+    var(--secondary-background-gradient-color)
+  );
+}
+
+@media (min-width: 768px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  main {
+    border-radius: 35px;
+    display: flex;
+    max-width: 670px;
+    box-shadow: 10px 20px 50px 25px hsl(241, 100%, 89%, 0.3);
+  }
+
+  .results {
+    width: 50%;
+    border-radius: 35px;
+  }
+
+  .results h1 {
+    font-size: 1.2em;
+    margin-top: 1rem;
+  }
+
+  .results .result-score {
+    width: 190px;
+    margin: 1.3em 0;
+  }
+
+  .result-score p {
+    text-align: center;
+  }
+
+  .result-score .reached-score {
+    font-size: 4em;
+  }
+
+  .summary {
+    width: 50%;
+    padding: 2rem;
+  }
+
+  .results .info {
+    padding: 1rem 2rem 0 2rem;
+  }
+
+  #continue-button {
+    margin-top: 1.5rem;
+  }
+
+  .attribution{
+    position: absolute;
+    bottom: 0;
+  }
+
+}
